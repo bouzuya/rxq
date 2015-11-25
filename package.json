@@ -16,7 +16,7 @@
   },
   "files": [
     "./lib",
-    "index.d.ts",
+    "./typings",
     "README.md"
   ],
   "homepage": "https://github.com/bouzuya/rxq",
@@ -30,10 +30,10 @@
   },
   "scripts": {
     "babel": "babel tmp --out-dir lib",
-    "build": "npm run tsc && npm run babel && npm run dts",
-    "clean": "rm -rf ./tmp ./lib index.d.ts",
-    "dts": "mv ./tmp/index.d.ts .",
-    "prepublish": "npm run clean && npm run build",
-    "tsc": "tsc --declaration --target es6 --outDir tmp src/index.ts"
-  }
+    "build": "tsc && npm run babel && npm run dts",
+    "clean": "rm -rf tmp lib typings",
+    "dts": "cp -R tmp typings && rm -f typings/*.js typings/**/*.js",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "typings": "./typings/index.d.ts"
 }
