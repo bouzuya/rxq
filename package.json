@@ -15,8 +15,8 @@
     "typescript": "^1.6.2"
   },
   "files": [
-    "./lib",
-    "./typings",
+    "lib",
+    "typings",
     "README.md"
   ],
   "homepage": "https://github.com/bouzuya/rxq",
